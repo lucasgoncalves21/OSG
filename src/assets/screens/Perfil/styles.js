@@ -13,11 +13,9 @@ export const Header = styled.View`
   z-index: 2;
 `;
 
-export const BackButton = styled.Image`
-  width: 30px;
-  height: 20px;
-  margin-left: -15px;
-  margin-top: -25px;
+export const BackButton = styled.TouchableOpacity`
+  bottom: 207px;
+  right: -10px;
 `;
 
 export const BackgroundImage = styled.Image`

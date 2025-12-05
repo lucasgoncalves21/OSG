@@ -22,6 +22,7 @@ import {
   MenuText,
   Divider,
 } from "./styles";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Perfil() {
   return (
@@ -29,9 +30,9 @@ export default function Perfil() {
       <ScrollView showsVerticalScrollIndicator={false}>
         <BackgroundImage source={require("../../images/profile_banner.jpg")} />
 
-        <Header>
-          <BackButton source={require("../../images/back.jpg")} />
-        </Header>
+        <BackButton>
+        <Ionicons name="arrow-undo" size={22} color="#B84EF2" />
+        </BackButton>
 
         <ProfileImage source={require("../../images/profile_photo.jpg")} />
         <Name>Poker Ghost</Name>

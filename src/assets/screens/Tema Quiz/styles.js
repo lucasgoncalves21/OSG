@@ -22,7 +22,7 @@ export const Title = styled.Text`
   color: white;
   font-size: 20px;
   font-weight: bold;
-  margin-left: 35px;
+  margin-left: 113px;
   margin-top: 20px;
 `;
 
@@ -30,8 +30,8 @@ export const GameOption = styled.TouchableOpacity`
   background-color: #2a0d4d;
   border-radius: 20px;
   width: 90%;
-  padding: 20px;
-  margin: 10px 0;
+  padding: 25px;
+  margin: 15px 0;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -51,10 +51,8 @@ export const BottomMenu = styled.View`
   padding: 10px 0;
   border-top-width: 1px;
   border-color: #4b2e83;
-  margin-bottom: 25px;
-  margin-top: 25px;
+  margin-top: 350px;
   gap: 50px;
-  border-radius: 15px;
 `;
 
 export const MenuButton = styled.TouchableOpacity`
@@ -71,19 +69,17 @@ export const MenuText = styled.Text`
 export const Text = styled.Text`
 color: white;
 font-size: 20px;
-margin-left: 37px;
+margin-left: 130px;
 `
 
 export const Text2 = styled.Text`
-text-align: center;
-left: -235px;
+margin-left: 120px;
 font-size: 20px;
 color: white;
-z-index: 1;
 `
 
 export const Text3 = styled.Text`
-margin-left: 15px;
+margin-left: 135px;
 font-size: 20px;
 color: white;
 `

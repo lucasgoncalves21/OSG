@@ -73,29 +73,26 @@ export const GroupText = styled.Text`
   margin-left: 10px;
 `;
 
-export const NavBar = styled.View`
+export const BottomMenu = styled.View`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: #2c173c;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  padding: 12px;
-  padding-bottom: 20px;
+  background-color: #3a1f54;
+  padding: 13px 0;
+  border-top-width: 1px;
+  border-color: #4b2e83;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  gap: 45px;
 `;
 
-export const NavItem = styled.TouchableOpacity`
+export const MenuButton = styled.TouchableOpacity`
   align-items: center;
-  justify-content: center;
+  opacity: ${(props) => (props.active ? 1 : 0.7)};
 `;
 
-export const NavLabel = styled.Text`
+export const MenuText = styled.Text`
+  color: #fff;
   font-size: 12px;
-  margin-top: 4px;
-  color: #2c173c;
+  margin-top: 2px;
 `;
-
-export const Image = styled.Image`
-width: 10px;
-height: 10px;
-`

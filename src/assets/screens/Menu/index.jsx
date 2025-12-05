@@ -1,19 +1,20 @@
 import { ScrollView, Image } from "react-native";
-import { 
-  Container, 
-  Header, 
-  Title, 
-  MenuIcon, 
-  SearchBar, 
-  ProfileIcon, 
-  Banner, 
-  SectionTitle, 
-  GroupItem, 
+import {
+  Container,
+  Header,
+  Title,
+  MenuIcon,
+  SearchBar,
+  ProfileIcon,
+  Banner,
+  SectionTitle,
+  GroupItem,
   GroupText,
-  NavBar, 
-  NavLabel, 
-  NavItem
+  MenuButton,
+  MenuText,
+  BottomMenu,
 } from "./styles";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Menu() {
   return (
@@ -52,27 +53,32 @@ export default function Menu() {
         </GroupItem>
       </ScrollView>
 
-      <NavBar>
-        <NavItem>
-          <Image source={require("../../images/home.jpg")} />
-          <NavLabel>Home</NavLabel>
-        </NavItem>
+      <BottomMenu>
+        <MenuButton>
+          <Ionicons name="home-outline" size={20} color="#fff" />
+          <MenuText>Home</MenuText>
+        </MenuButton>
 
-        <NavItem>
-          <Image source={require("../../images/game.jpg")} />
-          <NavLabel>Game</NavLabel>
-        </NavItem>
+        <MenuButton>
+          <Ionicons name="game-controller-outline" size={20} color="#fff" />
+          <MenuText>Game</MenuText>
+        </MenuButton>
 
-        <NavItem>
-          <Image source={require("../../images/config.jpg")} />
-          <NavLabel>Materiais</NavLabel>
-        </NavItem>
+        <MenuButton active>
+          <Ionicons name="chatbubble-ellipses" size={22} color="#fff" />
+          <MenuText>Grupos</MenuText>
+        </MenuButton>
 
-        <NavItem>
-          <Image source={require("../../images/conta.jpg")} />
-          <NavLabel>Perfil</NavLabel>
-        </NavItem>
-      </NavBar>
+        <MenuButton>
+          <Ionicons name="book-outline" size={20} color="#fff" />
+          <MenuText>Matérias</MenuText>
+        </MenuButton>
+
+        <MenuButton>
+          <Ionicons name="person-outline" size={20} color="#fff" />
+          <MenuText>Perfil</MenuText>
+        </MenuButton>
+      </BottomMenu>
     </Container>
   );
 }

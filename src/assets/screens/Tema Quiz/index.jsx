@@ -1,4 +1,4 @@
-import { Image } from "react-native";
+
 import {
   Container,
   Header,
@@ -15,35 +15,29 @@ import {
 } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function Game({ navigation }) {
+export default function ThemeSelection({ navigation }) {
   return (
     <Container>
       <Header>
         <BackButton onPress={() => navigation.goBack()}>
           <OptionText style={{ color: "#C67AFC" }}>Voltar</OptionText>
         </BackButton>
-        <Title>Escolha o Modo que deseja jogar</Title>
+        <Title>Escolha o Tema</Title>
       </Header>
 
       <GameOption>
-        <Image source={require("../../images/quiz_icon.jpg")} />
-        <Text>Quiz diário</Text>
+        <Text>Exatas</Text>
       </GameOption>
 
       <GameOption>
-        <Image source={require("../../images/Humanas_background.jpg")} />
-        <Text2>Duelo Aleatório</Text2>
+        
+        <Text2>Humanas</Text2>
       </GameOption>
 
       <GameOption>
-        <Image source={require("../../images/duelo_amigos.jpg")} />
-        <Text3>Duelo com Amigos</Text3>
+        <Text3>Extras</Text3>
       </GameOption>
 
-      <GameOption>
-        <Image source={require("../../images/treino_icon.jpg")} />
-        <Text>Treino</Text>
-      </GameOption>
 
       <BottomMenu>
         <MenuButton>
