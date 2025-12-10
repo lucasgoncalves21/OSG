@@ -15,8 +15,10 @@ import {
   Username,
   Points
 } from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
 export default function RankRegional() {
+  const navigation = useNavigation();
     
     const data = [
       { id: "1", name: "Makauli", points: "9999pts", avatar: require("../../images/icon_OSG.jpg") },
@@ -29,7 +31,7 @@ export default function RankRegional() {
     return (
     <Container>
       <Header>
-        <BackButton>Voltar</BackButton>
+        <BackButton onPress={() => navigation.goBack()}>Voltar</BackButton>
         <Title>Rank Regional</Title>
       </Header>
 

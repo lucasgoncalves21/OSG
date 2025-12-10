@@ -1,4 +1,4 @@
-import { ScrollView, Image } from "react-native";
+import { ScrollView, Image, TouchableOpacity } from "react-native";
 import {
   Container,
   Header,
@@ -15,14 +15,24 @@ import {
   BottomMenu,
 } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Menu() {
+  const navigation = useNavigation();
   return (
     <Container>
       <Header>
-        <MenuIcon source={require("../../images/menu.jpg")} />
+
+        <TouchableOpacity onPress={() => navigation.navigate("FiltroEstudo")}>
+          <MenuIcon source={require("../../images/menu.jpg")} />
+        </TouchableOpacity>
+
         <Title>OSG</Title>
-        <ProfileIcon source={require("../../images/libras.jpg")} />
+
+        {/* Ir para o Perfil */}
+        <TouchableOpacity onPress={() => navigation.navigate("Perfil")}>
+          <ProfileIcon source={require("../../images/libras.jpg")} />
+        </TouchableOpacity>
       </Header>
 
       <SearchBar placeholder="Pesquisar" placeholderTextColor="#A086CC" />
@@ -32,34 +42,49 @@ export default function Menu() {
       <SectionTitle>Seus Grupos</SectionTitle>
 
       <ScrollView>
-        <GroupItem>
-          <Image source={require("../../images/quimica_organica.jpg")} />
-          <GroupText>Grupo de Química Orgânica</GroupText>
-        </GroupItem>
 
-        <GroupItem>
-          <Image source={require("../../images/economia.jpg")} />
-          <GroupText>Grupo de Economia</GroupText>
-        </GroupItem>
+        {/* Química Orgânica */}
+        <TouchableOpacity onPress={() => navigation.navigate("QuimicaOrganica")}>
+          <GroupItem>
+            <Image source={require("../../images/quimica_organica.jpg")} />
+            <GroupText>Grupo de Química Orgânica</GroupText>
+          </GroupItem>
+        </TouchableOpacity>
 
-        <GroupItem>
-          <Image source={require("../../images/algebra.jpg")} />
-          <GroupText>Grupo de Álgebra</GroupText>
-        </GroupItem>
+        {/* Economia */}
+        <TouchableOpacity onPress={() => navigation.navigate("Economia")}>
+          <GroupItem>
+            <Image source={require("../../images/economia.jpg")} />
+            <GroupText>Grupo de Economia</GroupText>
+          </GroupItem>
+        </TouchableOpacity>
 
-        <GroupItem>
-          <Image source={require("../../images/quimica_forense.jpg")} />
-          <GroupText>Grupo de Química Forense</GroupText>
-        </GroupItem>
+        {/* Álgebra */}
+        
+          <GroupItem>
+            <Image source={require("../../images/algebra.jpg")} />
+            <GroupText>Grupo de Álgebra</GroupText>
+          </GroupItem>
+        
+
+        {/* Química Forense */}
+        
+          <GroupItem>
+            <Image source={require("../../images/quimica_forense.jpg")} />
+            <GroupText>Grupo de Química Forense</GroupText>
+          </GroupItem>
+        
       </ScrollView>
 
+      {/* MENU INFERIOR */}
       <BottomMenu>
-        <MenuButton>
+
+        <MenuButton onPress={() => navigation.navigate("Menu")}>
           <Ionicons name="home-outline" size={20} color="#fff" />
           <MenuText>Home</MenuText>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("Game")}>
           <Ionicons name="game-controller-outline" size={20} color="#fff" />
           <MenuText>Game</MenuText>
         </MenuButton>
@@ -69,15 +94,16 @@ export default function Menu() {
           <MenuText>Grupos</MenuText>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("FiltroEstudo")}>
           <Ionicons name="book-outline" size={20} color="#fff" />
           <MenuText>Matérias</MenuText>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("Perfil")}>
           <Ionicons name="person-outline" size={20} color="#fff" />
           <MenuText>Perfil</MenuText>
         </MenuButton>
+
       </BottomMenu>
     </Container>
   );

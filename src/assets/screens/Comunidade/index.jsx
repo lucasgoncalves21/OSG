@@ -2,13 +2,18 @@ import React from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import styles from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CommunityScreen() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
 
+      
       <View style={styles.topBar}>
+        <TouchableOpacity onPress={() => navigation.navigate("FiltroEstudo")}>
         <Ionicons name="menu" size={35} color="#C46CFF" />
+        </TouchableOpacity>
         
         <View style={styles.searchBox}>
           <Ionicons name="search" size={20} color="#9b73c5" />
@@ -49,12 +54,12 @@ export default function CommunityScreen() {
       </View>
 
       <View style={styles.bottomNav}>
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate("Menu")}>
           <Ionicons name="home-outline" size={22} color="#CFA7FF" />
           <Text style={styles.navText}>Home</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate("Game")}>
           <Ionicons name="game-controller-outline" size={22} color="#CFA7FF" />
           <Text style={styles.navText}>Game</Text>
         </TouchableOpacity>
@@ -68,7 +73,7 @@ export default function CommunityScreen() {
           <Text style={styles.navText}>Materiais</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate("Perfil")}>
           <Ionicons name="person-outline" size={22} color="#CFA7FF" />
           <Text style={styles.navText}>Perfil</Text>
         </TouchableOpacity>

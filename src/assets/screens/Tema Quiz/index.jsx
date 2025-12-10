@@ -1,4 +1,5 @@
 
+import { useNavigation } from "@react-navigation/native";
 import {
   Container,
   Header,
@@ -15,7 +16,8 @@ import {
 } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function ThemeSelection({ navigation }) {
+export default function ThemeSelection() {
+  const navigation = useNavigation();
   return (
     <Container>
       <Header>
@@ -29,7 +31,7 @@ export default function ThemeSelection({ navigation }) {
         <Text>Exatas</Text>
       </GameOption>
 
-      <GameOption>
+      <GameOption onPress={() => navigation.navigate("DueloAmigo")}>
         
         <Text2>Humanas</Text2>
       </GameOption>

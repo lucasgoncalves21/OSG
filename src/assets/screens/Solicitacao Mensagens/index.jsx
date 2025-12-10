@@ -17,8 +17,10 @@ import {
   MenuText,
 } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function SolicitacaoMensagens() {
+  const navigation = useNavigation();
   const mensagens = [
     {
       id: 1,
@@ -46,7 +48,7 @@ export default function SolicitacaoMensagens() {
   return (
     <Container>
       <Header>
-        <IconButton>
+        <IconButton onPress={() => navigation.navigate("FiltroEstudo")}>
           <Ionicons name="menu" size={35} color="#B84EF2" />
         </IconButton>
 
@@ -61,7 +63,7 @@ export default function SolicitacaoMensagens() {
 
       <Title>OSG</Title>
 
-      <BackButton>
+      <BackButton onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-undo" size={22} color="#B84EF2" />
       </BackButton>
 
@@ -89,12 +91,12 @@ export default function SolicitacaoMensagens() {
       />
 
       <BottomMenu>
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("Menu")}>
           <Ionicons name="home-outline" size={20} color="#fff" />
           <MenuText>Home</MenuText>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("Game")}>
           <Ionicons name="game-controller-outline" size={20} color="#fff" />
           <MenuText>Game</MenuText>
         </MenuButton>
@@ -104,12 +106,12 @@ export default function SolicitacaoMensagens() {
           <MenuText>Grupos</MenuText>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("FiltroEstudo")}>
           <Ionicons name="book-outline" size={20} color="#fff" />
           <MenuText>Matérias</MenuText>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("Perfil")}>
           <Ionicons name="person-outline" size={20} color="#fff" />
           <MenuText>Perfil</MenuText>
         </MenuButton>

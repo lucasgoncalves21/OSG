@@ -53,6 +53,7 @@ export const BottomMenu = styled.View`
   border-color: #4b2e83;
   margin-top: 350px;
   gap: 50px;
+  border-radius: 10px;
 `;
 
 export const MenuButton = styled.TouchableOpacity`

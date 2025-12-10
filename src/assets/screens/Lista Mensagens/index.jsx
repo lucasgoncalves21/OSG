@@ -19,8 +19,10 @@ import {
   MenuText,
 } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ChatList() {
+  const navigation = useNavigation();
   const chats = [
     {
       id: 1,
@@ -55,7 +57,7 @@ export default function ChatList() {
   return (
     <Container>
       <Header>
-        <IconButton>
+        <IconButton onPress={() => navigation.navigate("FiltroEstudo")}>
           <Ionicons name="menu" size={35} color="#B84EF2" />
         </IconButton>
         <SearchArea>
@@ -70,7 +72,7 @@ export default function ChatList() {
 
       <MessageRequest>
         <Ionicons name="mail-outline" size={22} color="#B84EF2" />
-        <MessageRequestText>Solicitação de Mensagens</MessageRequestText>
+        <MessageRequestText onPress={() => navigation.navigate("SolicitacaoMensagens")}>Solicitação de Mensagens</MessageRequestText>
       </MessageRequest>
 
       <Divider />
@@ -94,12 +96,12 @@ export default function ChatList() {
       />
 
       <BottomMenu>
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("Menu")}>
           <Ionicons name="home-outline" size={20} color="#fff" />
           <MenuText>Home</MenuText>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("Game")}>
           <Ionicons name="game-controller-outline" size={20} color="#fff" />
           <MenuText>Game</MenuText>
         </MenuButton>
@@ -109,12 +111,12 @@ export default function ChatList() {
           <MenuText>Grupos</MenuText>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("FiltroEstudo")}>
           <Ionicons name="book-outline" size={20} color="#fff" />
           <MenuText>Matérias</MenuText>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("Perfil")}>
           <Ionicons name="person-outline" size={20} color="#fff" />
           <MenuText>Perfil</MenuText>
         </MenuButton>

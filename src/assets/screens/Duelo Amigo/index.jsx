@@ -33,20 +33,22 @@ import {
 
 } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function DueloAmigo() {
+    const navigation = useNavigation();
     return (
         <Container>
 
             {/* ======= HEADER ======= */}
             <Header>
-                <MenuButton>
+                <MenuButton onPress={() => navigation.navigate("FiltroEstudo")}>
                     <MenuIcon source={require("../../images/menu.jpg")} />
                 </MenuButton>
 
                 <Title>OSG</Title>
 
-                <BackButton>
+                <BackButton onPress={() => navigation.goBack()}>
                     <BackText>Voltar</BackText>
                 </BackButton>
             </Header>
@@ -118,12 +120,12 @@ export default function DueloAmigo() {
 
             {/* ======= TABS INFERIORES ======= */}
             <BottomMenu>
-                <MenuButton>
+                <MenuButton onPress={() => navigation.navigate("Menu")}>
                     <Ionicons name="home-outline" size={20} color="#fff" />
                     <MenuText>Home</MenuText>
                 </MenuButton>
 
-                <MenuButton>
+                <MenuButton onPress={() => navigation.navigate("Game")}>
                     <Ionicons name="game-controller-outline" size={20} color="#fff" />
                     <MenuText>Game</MenuText>
                 </MenuButton>
@@ -138,7 +140,7 @@ export default function DueloAmigo() {
                     <MenuText>Matérias</MenuText>
                 </MenuButton>
 
-                <MenuButton>
+                <MenuButton onPress={() => navigation.navigate("Perfil")}>
                     <Ionicons name="person-outline" size={20} color="#fff" />
                     <MenuText>Perfil</MenuText>
                 </MenuButton>

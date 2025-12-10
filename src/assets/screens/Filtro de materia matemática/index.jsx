@@ -15,8 +15,10 @@ import {
   OptionIcon
 } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function FiltroMatematica() {
+  const navigation = useNavigation();
   return (
     <Container>
 
@@ -28,7 +30,7 @@ export default function FiltroMatematica() {
           source={require("../../images/icon_OSG.jpg")}
         />
 
-        <BackButton>
+        <BackButton onPress={() => navigation.goBack()}>
           <BackText>Voltar</BackText>
         </BackButton>
       </Header>

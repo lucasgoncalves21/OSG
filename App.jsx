@@ -31,16 +31,57 @@ import FiltroAstronomia from './src/assets/screens/Filtro de materia astronomia'
 import FiltroSociologia from './src/assets/screens/Filtro de materia sociologia';
 import FiltroInformatica from './src/assets/screens/Filtro de materia informatica';
 import FiltroAntropologia from './src/assets/screens/Filtro de materia antropologia';
+import { createStaticNavigation } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const ContainerApp = styled.SafeAreaView`
 flex: 1;
 `
+const RootStack = createNativeStackNavigator({
+  screenOptions: {headerShown: false},
+  initialRouteName: "Home" ,
+  screens: {
+    Home: Home,
+    Login: Login,
+    Cadastro: Cadastro,
+    Menu: Menu,
+    QuimicaOrganica: QuimicaOrganica,
+    Economia: Economia,
+    FiltroEstudo: FiltroEstudo,
+    FiltroExatas: FiltroExatas,
+    FiltroHumanas: FiltroHumanas,
+    FiltroExtras: FiltroExtras,
+    CommunityScreen: CommunityScreen,
+    FiltroMatematica: FiltroMatematica,
+    FiltroQuimica: FiltroQuimica,
+    FiltroAstronomia: FiltroAstronomia,
+    FiltroInformatica: FiltroInformatica,
+    FiltroHistoria: FiltroHistoria,
+    FiltroFilosofia: FiltroFilosofia,
+    FiltroSociologia: FiltroSociologia,
+    FiltroAntropologia: FiltroAntropologia,
+    Game: Game,
+    ConviteDuelo: ConviteDuelo,
+    DueloAmigo: DueloAmigo,
+    Treino: Treino,
+    ThemeSelection: ThemeSelection,
+    Perfil: Perfil,
+    ChatList: ChatList,
+    SolicitacaoMensagens: SolicitacaoMensagens,
+    FiltroRanking: FiltroRanking,
+    RankAmigos: RankAmigos,
+    RankGlobal: RankGlobal,
+    RankRegional: RankRegional
+  }
+})
+
+const Navigation = createStaticNavigation(RootStack)
 
 export default function App() {
   return (
     <ContainerApp>
-      <StatusBar hidden />
-      <Perfil />
+      <StatusBar hidden/>
+      <Navigation />
     </ContainerApp>
   );
 }

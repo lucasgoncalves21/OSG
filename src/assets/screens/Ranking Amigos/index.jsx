@@ -13,6 +13,7 @@ import {
   Username,
   Points
 } from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
 const data = [
   { id: "1", name: "Makauli", points: "9999pts", avatar: require("../../images/icon_OSG.jpg") },
@@ -23,10 +24,11 @@ const data = [
 ];
 
 export default function RankAmigos() {
+  const navigation = useNavigation();
   return (
     <Container>
       <Header>
-        <BackButton>Voltar</BackButton>
+        <BackButton onPress={() => navigation.goBack()}>Voltar</BackButton>
         <Title>Rank de Amigos</Title>
       </Header>
 

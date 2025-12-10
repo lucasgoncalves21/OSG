@@ -23,14 +23,16 @@ import {
   Divider,
 } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Perfil() {
+  const navigation = useNavigation();
   return (
     <Container>
       <ScrollView showsVerticalScrollIndicator={false}>
         <BackgroundImage source={require("../../images/profile_banner.jpg")} />
 
-        <BackButton>
+        <BackButton onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-undo" size={22} color="#B84EF2" />
         </BackButton>
 
@@ -70,12 +72,12 @@ export default function Perfil() {
           <PlusText>Obter Plus? Ganhe o dobro de xp e mais recompensas</PlusText>
         </PlusCard>
 
-        <MenuItem>
+        <MenuItem onPress={() => navigation.navigate("ChatList")}>
           <Image source={require("../../images/message_icon.jpg")} />
           <MenuText>Mensagem</MenuText>
         </MenuItem>
 
-        <MenuItem>
+        <MenuItem onPress={() => navigation.navigate("FiltroRanking")}>
           <Image source={require("../../images/ranking_icon.jpg")} />
           <MenuText>Ranking</MenuText>
         </MenuItem>
@@ -102,7 +104,7 @@ export default function Perfil() {
           <MenuText>Ajuda e Suporte</MenuText>
         </MenuItem>
 
-        <MenuItem>
+        <MenuItem onPress={() => navigation.navigate("Home")}>
           <Image source={require("../../images/logout_icon.jpg")} />
           <MenuText>Fazer Logout</MenuText>
         </MenuItem>

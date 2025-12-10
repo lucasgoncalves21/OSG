@@ -14,8 +14,10 @@ import {
   CardText2,
   CardText3
 } from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
 export default function FiltroEstudo() {
+  const navigation = useNavigation();
   return (
     <Container>
 
@@ -27,13 +29,13 @@ export default function FiltroEstudo() {
           source={require("../../images/icon_OSG.jpg")}
         />
 
-        <BackButton>
+        <BackButton onPress={() => navigation.goBack()}>
           <BackText>Voltar</BackText>
         </BackButton>
       </Header>
 
       {/* ===== CARD EXATAS ===== */}
-      <Card>
+      <Card onPress={() => navigation.navigate("FiltroExatas")}>
         <CardBackground
           source={require("../../images/Exatas_background.jpg")}
         />
@@ -41,7 +43,7 @@ export default function FiltroEstudo() {
       </Card>
 
       {/* ===== CARD HUMANAS ===== */}
-      <Card>
+      <Card onPress={() => navigation.navigate("FiltroHumanas")}>
         <CardBackground
           source={require("../../images/Humanas_background.jpg")}
         />
@@ -49,7 +51,7 @@ export default function FiltroEstudo() {
       </Card>
 
       {/* ===== CARD EXTRAS ===== */}
-      <Card>
+      <Card onPress={() => navigation.navigate("FiltroExtras")}>
         <CardBackground2
           source={require("../../images/Extras.jpg")}
         />
@@ -57,7 +59,7 @@ export default function FiltroEstudo() {
       </Card>
 
       {/* ===== CARD COMUNIDADE ===== */}
-      <Card>
+      <Card onPress={() => navigation.navigate("CommunityScreen")}>
         <CardBackground3
           source={require("../../images/comunidade.jpg")}
         />

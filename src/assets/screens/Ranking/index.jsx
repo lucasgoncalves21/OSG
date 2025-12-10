@@ -12,8 +12,10 @@ import {
   CardIcon,
   CardText
 } from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
 export default function FiltroRanking() {
+  const navigation = useNavigation();
   return (
     <Container>
 
@@ -27,24 +29,24 @@ export default function FiltroRanking() {
           <Logo source={require("../../images/icon_OSG.jpg")} />
         </LeftHeader>
 
-        <BackButton>
+        <BackButton onPress={() => navigation.goBack()}>
           <BackText>Voltar</BackText>
         </BackButton>
       </Header>
 
       <Title>Tipos de Ranking</Title>
 
-      <Card>
+      <Card onPress={() => navigation.navigate("RankRegional")}>
         <CardIcon source={require("../../images/rank-regional.jpg")} />
         <CardText>Regional</CardText>
       </Card>
 
-      <Card>
+      <Card onPress={() => navigation.navigate("RankAmigos")}>
         <CardIcon source={require("../../images/rank-friends.jpg")} />
         <CardText>Entre amigos</CardText>
       </Card>
 
-      <Card>
+      <Card onPress={() => navigation.navigate("RankGlobal")}>
         <CardIcon source={require("../../images/rank-global.jpg")} />
         <CardText>Global</CardText>
       </Card>

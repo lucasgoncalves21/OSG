@@ -21,8 +21,11 @@ import {
   MenuButton
 } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Economia() {
+  const navigation = useNavigation();
+
   const [messages, setMessages] = useState([
     { id: 1, text: "Olá, grupo!", sender: "outro" },
     { id: 2, text: "Tudo bem com vocês?", sender: "outro" },
@@ -83,12 +86,12 @@ export default function Economia() {
       </InputArea>
 
         <BottomMenu>
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("Menu")}>
           <Ionicons name="home-outline" size={20} color="#fff" />
           <MenuText>Home</MenuText>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("Game")}>
           <Ionicons name="game-controller-outline" size={20} color="#fff" />
           <MenuText>Game</MenuText>
         </MenuButton>
@@ -98,12 +101,12 @@ export default function Economia() {
           <MenuText>Grupos</MenuText>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("FiltroEstudo")}>
           <Ionicons name="book-outline" size={20} color="#fff" />
           <MenuText>Matérias</MenuText>
         </MenuButton>
 
-        <MenuButton>
+        <MenuButton onPress={() => navigation.navigate("Perfil")}>
           <Ionicons name="person-outline" size={20} color="#fff" />
           <MenuText>Perfil</MenuText>
         </MenuButton>
